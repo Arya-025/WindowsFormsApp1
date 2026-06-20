@@ -359,7 +359,7 @@ namespace WindowsFormsApp1
                 simpanLog(ex.Message);
                 MessageBox.Show("General Error :" + ex.Message);
             }
-        }
+        } 
 
         private void dptTanggalLahir_ValueChanged(object sender, EventArgs e)
         {
