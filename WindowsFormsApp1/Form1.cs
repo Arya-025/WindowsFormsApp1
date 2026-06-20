@@ -286,7 +286,7 @@ namespace WindowsFormsApp1
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             dataGridView1.CellClick += dataGridView1_CellContentClick;
-        }
+        } 
        
         
 
