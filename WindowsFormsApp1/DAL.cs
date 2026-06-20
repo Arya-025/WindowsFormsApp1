@@ -14,14 +14,7 @@ namespace WindowsFormsApp1
 
     internal class DAL
     {
-        static string connectionString = string.Format("Server=localhost;Port=3307;Database=DBAkademi1;Uid=root;Pwd=admin123;");
-
-        public string GetConnectionString()
-        {
-            return connectionString;
-        }
-        //object untuk merepresentasikan konkesi ke MySQL Server
-        MySqlConnection conn = new MySqlConnection(connectionString);
+         
         MySqlDataAdapter da;
         DataTable dtMahasiswa;
         DataTable dtProdi; 
@@ -265,6 +258,38 @@ namespace WindowsFormsApp1
             da.Fill(dtMahasiswa);
             return dtMahasiswa;
         }
+        public static string GetLoacalIPAddress()
+        {
+            string localIP = string.Empty;
+            try
+            {
+                var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+                foreach (var ip in host.AddressList)
+                {
+                    if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    {
+                        localIP = ip.ToString();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error getting local IP address: " + ex.Message);
+            }
+            return localIP;
+        }
+
+        static string connectionString = $"Server={GetLoacalIPAddress()};port=3307;database=DBAkademi1;" +
+            $"User ID=BambangGanzz;Password=1234";
+
+        public string GetConnectionString()
+        {
+            return connectionString;
+        }
+
+        MySqlConnection conn = new MySqlConnection(connectionString);
     }
+
 
 }
