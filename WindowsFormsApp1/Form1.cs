@@ -438,7 +438,7 @@ namespace WindowsFormsApp1
                 simpanLog(ex.Message);
                 MessageBox.Show("General Error :" + ex.Message);
             }
-        }
+        } 
 
         private void button3_Click(object sender, EventArgs e)
         {
