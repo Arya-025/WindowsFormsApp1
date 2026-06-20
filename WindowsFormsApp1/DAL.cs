@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         MySqlConnection conn = new MySqlConnection(connectionString);
         MySqlDataAdapter da;
         DataTable dtMahasiswa;
-        DataTable dtProdi;
+        DataTable dtProdi; 
 
 
         public int CountMhs()
