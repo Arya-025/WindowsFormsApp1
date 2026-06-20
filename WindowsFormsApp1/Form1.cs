@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
                 simpanLog(ex.Message);
                 MessageBox.Show("Gagal load data: " + ex.Message);
             }
-        }
+        } 
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbJK.DataSource = new string[] { "L", "P" };
