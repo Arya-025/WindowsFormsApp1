@@ -23,11 +23,15 @@ namespace WindowsFormsApp1
         MySqlDataAdapter da;
         DataTable dtMahasiswa;
         DataTable dtProdi;
+        
 
-       
-        public Form2()
+
+
+        public Form2(string prodi, DateTime tglmasuk)
         {
             InitializeComponent();
+
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,6 +109,21 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Gagal load data: " + ex.Message);
             }
+        } 
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            // Ambil string nama prodi dari .Text secara murni
+    string prodiTerpilih = cmbProdi.Text;
+    
+    // Ambil tahunnya saja (.Year) dari DateTimePicker Form 2
+    int tahunTerpilih = dtpTanggalMasuk.Value.Year;
+
+    // Kirim data yang sudah bersih ke Form 3
+    Form3 frm3 = new Form3(prodiTerpilih, tahunTerpilih.ToString());
+    frm3.Show();
+    this.Hide();
         }
     }
+
 }
