@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
 
             return Convert.ToInt32(cmd.Parameters["p_Total"].Value);
-        }
+        } 
      
 
         public DataTable GetMhs()
