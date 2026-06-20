@@ -100,7 +100,7 @@ namespace WindowsFormsApp1
             {
                 conn.Close();
             }
-        }
+        } 
 
         public void UpdateMhs(string nim, string nama, string alamat, string jenisKelamin, DateTime tanggalLahir, string kodeProdi, byte[] foto)
         {
