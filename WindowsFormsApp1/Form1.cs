@@ -549,7 +549,7 @@ namespace WindowsFormsApp1
             {
                 simpanLog("General Error :" + ex.Message);
                 MessageBox.Show("General Error :" + ex.Message);
-            }
+            } 
         }
     }
 }
